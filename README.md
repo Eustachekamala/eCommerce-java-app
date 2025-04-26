@@ -24,3 +24,6 @@ eCommerce-java-app is a Spring Boot-based application designed to manage an e-co
 - Maven 3.8+
 - IDE (e.g., IntelliJ IDEA)
 - Database (PostgreSQL)
+
+## Entity-Relationship Diagram (ERD)
+![ERD](src/main/resources/docs/eCommerceERD.png)
