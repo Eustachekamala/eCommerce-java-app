@@ -44,18 +44,18 @@ public class ProductService {
     public ProductDTO findById(Integer id) {
         return productRepository.findById(id)
                 .map(productMapper::toProductDTO)
-                .orElseThrow(() -> new ResourceNotFoundException("Customer with id: " +id+ " not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Product with id: " +id+ " not found"));
     }
 
     //update product
-    @Operation(summary = "Update Customer")
+    @Operation(summary = "Update Product")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Customer updated successfully"),
+            @ApiResponse(responseCode = "201", description = "Product updated successfully"),
             @ApiResponse(responseCode = "404", description = "Invalid id")
     })
     public ProductDTO updateProduct(Integer productId, ProductDTO productDTO) {
         Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new ResourceNotFoundException("Customer with id: " +productId+ " not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Product with id: " +productId+ " not found"));
         product.setProductName(productDTO.productName());
         product.setPrice(productDTO.price());
         product.setCategory(productDTO.category());
@@ -64,7 +64,7 @@ public class ProductService {
     }
 
     //delete a product
-    @Operation(summary = "Delete Customer")
+    @Operation(summary = "Delete Product")
     public void deleteProduct(Integer id) {
         productRepository.deleteById(id);
     }
