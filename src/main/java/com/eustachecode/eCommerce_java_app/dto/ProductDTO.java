@@ -1,0 +1,15 @@
+package com.eustachecode.eCommerce_java_app.dto;
+
+import com.eustachecode.eCommerce_java_app.models.Category;
+
+import java.util.List;
+
+public record ProductDTO(
+        Integer productId,
+        String productName,
+        int Stock,
+        double price,
+        String categoryName,
+        List<Integer> orderItems
+) {
+}
