@@ -9,7 +9,7 @@ public record ProductDTO(
         String productName,
         int Stock,
         double price,
-        String categoryName,
+        Category category,
         List<Integer> orderItems
 ) {
 }
