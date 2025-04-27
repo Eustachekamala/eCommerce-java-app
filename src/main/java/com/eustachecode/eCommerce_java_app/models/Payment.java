@@ -19,7 +19,7 @@ public class Payment {
     @Column(nullable = false)
     private double amount;
     @ManyToOne
-    @JoinColumn(name = "oderId", nullable = false)
+    @JoinColumn(name = "oder_id", nullable = false)
     private Order order;
     private String currency;
     private Date paymentDate;

@@ -1,3 +1,5 @@
+com/eustachecode/eCommerce_java_app/services/ProductService.class
+com/eustachecode/eCommerce_java_app/controllers/CategoryController.class
 com/eustachecode/eCommerce_java_app/dto/PaymentDTO.class
 com/eustachecode/eCommerce_java_app/dto/CategoryDTO.class
 com/eustachecode/eCommerce_java_app/mappers/OrderMapper.class
@@ -5,14 +7,17 @@ com/eustachecode/eCommerce_java_app/services/CustomerService.class
 com/eustachecode/eCommerce_java_app/mappers/CategoryMapperImpl.class
 com/eustachecode/eCommerce_java_app/errors/GlobalExceptionHandler.class
 com/eustachecode/eCommerce_java_app/ECommerceJavaAppApplication.class
+com/eustachecode/eCommerce_java_app/repositories/CategoryRepository.class
 com/eustachecode/eCommerce_java_app/mappers/OrderItemMapperImpl.class
 com/eustachecode/eCommerce_java_app/mappers/ProductMapperImpl.class
 com/eustachecode/eCommerce_java_app/mappers/PaymentMapperImpl.class
 com/eustachecode/eCommerce_java_app/dto/CustomerDTO.class
 com/eustachecode/eCommerce_java_app/mappers/CategoryMapper.class
 com/eustachecode/eCommerce_java_app/mappers/OrderItemMapper.class
+com/eustachecode/eCommerce_java_app/controllers/ProductController.class
 com/eustachecode/eCommerce_java_app/mappers/OrderMapperImpl.class
 com/eustachecode/eCommerce_java_app/models/Order.class
+com/eustachecode/eCommerce_java_app/repositories/ProductRepository.class
 com/eustachecode/eCommerce_java_app/models/Category.class
 com/eustachecode/eCommerce_java_app/mappers/ProductMapper.class
 com/eustachecode/eCommerce_java_app/models/Payment.class
@@ -25,6 +30,7 @@ com/eustachecode/eCommerce_java_app/errors/ResourceNotFoundException.class
 com/eustachecode/eCommerce_java_app/dto/OrderItemDTO.class
 com/eustachecode/eCommerce_java_app/mappers/PaymentMapper.class
 com/eustachecode/eCommerce_java_app/mappers/CustomerMapperImpl.class
+com/eustachecode/eCommerce_java_app/services/CategoryService.class
 com/eustachecode/eCommerce_java_app/models/OrderItem.class
 com/eustachecode/eCommerce_java_app/repositories/CustomerRepository.class
 com/eustachecode/eCommerce_java_app/models/Customer.class

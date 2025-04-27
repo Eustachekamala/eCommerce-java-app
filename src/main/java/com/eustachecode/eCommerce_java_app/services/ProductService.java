@@ -4,6 +4,7 @@ import com.eustachecode.eCommerce_java_app.dto.ProductDTO;
 import com.eustachecode.eCommerce_java_app.errors.ResourceNotFoundException;
 import com.eustachecode.eCommerce_java_app.mappers.ProductMapper;
 import com.eustachecode.eCommerce_java_app.models.Product;
+import com.eustachecode.eCommerce_java_app.repositories.CategoryRepository;
 import com.eustachecode.eCommerce_java_app.repositories.ProductRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 public class ProductService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
+    private final CategoryRepository categoryRepository;
 
     //Create a product
     @Operation(summary = "Create a new Customer")
@@ -27,7 +29,14 @@ public class ProductService {
             @ApiResponse(responseCode = "400", description = "Invalid input")
     })
     public ProductDTO createProduct(ProductDTO productDTO) {
+        var category = categoryRepository.findByCategoryName(productDTO.categoryName())
+                .orElseThrow(() -> new ResourceNotFoundException("Category with name: " + productDTO.categoryName() + " not found"));
+
         Product product = productMapper.toProduct(productDTO);
+        product.setProductName(productDTO.productName());
+        product.setCategory(category);
+        product.setPrice(productDTO.price());
+        product.setStock(productDTO.Stock());
         Product savedProduct = productRepository.save(product);
         return productMapper.toProductDTO(savedProduct);
     }
@@ -54,11 +63,14 @@ public class ProductService {
             @ApiResponse(responseCode = "404", description = "Invalid id")
     })
     public ProductDTO updateProduct(Integer productId, ProductDTO productDTO) {
+        var category = categoryRepository.findByCategoryName(productDTO.categoryName())
+                .orElseThrow(() -> new ResourceNotFoundException("Category with name: " + productDTO.categoryName() + " not found"));
+
         Product product = productRepository.findById(productId)
                 .orElseThrow(() -> new ResourceNotFoundException("Product with id: " +productId+ " not found"));
         product.setProductName(productDTO.productName());
         product.setPrice(productDTO.price());
-        product.setCategory(productDTO.category());
+        product.setCategory(category);
         Product updatedProduct = productRepository.save(product);
         return productMapper.toProductDTO(updatedProduct);
     }
