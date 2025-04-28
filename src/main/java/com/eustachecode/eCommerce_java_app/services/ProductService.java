@@ -29,14 +29,10 @@ public class ProductService {
             @ApiResponse(responseCode = "400", description = "Invalid input")
     })
     public ProductDTO createProduct(ProductDTO productDTO) {
-        var category = categoryRepository.findByCategoryName(productDTO.categoryName())
-                .orElseThrow(() -> new ResourceNotFoundException("Category with name: " + productDTO.categoryName() + " not found"));
-
+        var category = categoryRepository.findById(productDTO.categoryId())
+                .orElseThrow(() -> new ResourceNotFoundException("Category with id: " + productDTO.categoryId() + " not found"));
         Product product = productMapper.toProduct(productDTO);
-        product.setProductName(productDTO.productName());
         product.setCategory(category);
-        product.setPrice(productDTO.price());
-        product.setStock(productDTO.Stock());
         Product savedProduct = productRepository.save(product);
         return productMapper.toProductDTO(savedProduct);
     }
@@ -63,8 +59,8 @@ public class ProductService {
             @ApiResponse(responseCode = "404", description = "Invalid id")
     })
     public ProductDTO updateProduct(Integer productId, ProductDTO productDTO) {
-        var category = categoryRepository.findByCategoryName(productDTO.categoryName())
-                .orElseThrow(() -> new ResourceNotFoundException("Category with name: " + productDTO.categoryName() + " not found"));
+        var category = categoryRepository.findById(productDTO.categoryId())
+                .orElseThrow(() -> new ResourceNotFoundException("Category with id: " + productDTO.categoryId() + " not found"));
 
         Product product = productRepository.findById(productId)
                 .orElseThrow(() -> new ResourceNotFoundException("Product with id: " +productId+ " not found"));

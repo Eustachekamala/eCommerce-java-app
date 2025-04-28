@@ -7,9 +7,9 @@ import java.util.List;
 public record ProductDTO(
         Integer productId,
         String productName,
-        int Stock,
+        int stock,
         double price,
-        Category categoryName,
+        Integer categoryId,
         List<Integer> orderItems
 ) {
 }

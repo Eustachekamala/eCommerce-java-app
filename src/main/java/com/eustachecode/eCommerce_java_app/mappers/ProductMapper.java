@@ -3,26 +3,28 @@ package com.eustachecode.eCommerce_java_app.mappers;
 import com.eustachecode.eCommerce_java_app.dto.ProductDTO;
 import com.eustachecode.eCommerce_java_app.models.OrderItem;
 import com.eustachecode.eCommerce_java_app.models.Product;
-import org.mapstruct.Mapper;
+import org.springframework.stereotype.Component;
 
-@Mapper(componentModel = "spring")
-public interface ProductMapper {
-    Product toProduct(ProductDTO dto);
-    ProductDTO toProductDTO(Product product);
+import java.util.ArrayList;
 
-    default OrderItem map(Integer id) {
-        if (id == null) {
-            return null;
-        }
-        OrderItem orderItem = new OrderItem();
-        orderItem.setOrderItemId(id);
-        return orderItem;
+@Component
+public class ProductMapper {
+    public Product toProduct(ProductDTO dto){
+       Product product = new Product();
+       product.setProductId(dto.productId());
+       product.setProductName(dto.productName());
+       product.setStock(dto.stock());
+       product.setPrice(dto.price());
+       return product;
     }
-
-    default Integer map(OrderItem orderItem) {
-        if (orderItem == null) {
-            return null;
-        }
-        return orderItem.getOrderItemId();
+    public ProductDTO toProductDTO(Product product){
+        return new ProductDTO(
+                product.getProductId(),
+                product.getProductName(),
+                product.getStock(),
+                product.getPrice(),
+                product.getCategory() != null ? product.getCategory().getCategoryId() : null,
+                new ArrayList<>()
+        );
     }
 }

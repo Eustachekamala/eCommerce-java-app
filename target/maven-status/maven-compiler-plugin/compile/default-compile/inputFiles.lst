@@ -2,6 +2,7 @@
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/config/SwaggerConfig.java
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/controllers/CategoryController.java
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/controllers/CustomerController.java
+/home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/controllers/OrderController.java
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/controllers/ProductController.java
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/dto/CategoryDTO.java
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/dto/CustomerDTO.java
@@ -26,7 +27,9 @@
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/models/Product.java
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/repositories/CategoryRepository.java
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/repositories/CustomerRepository.java
+/home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/repositories/OrderRepository.java
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/repositories/ProductRepository.java
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/services/CategoryService.java
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/services/CustomerService.java
+/home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/services/OrderService.java
 /home/eustache/Deepen-fullstack-Roadmap/Java/Fullstack-java-app/eCommerce-java-app/src/main/java/com/eustachecode/eCommerce_java_app/services/ProductService.java
