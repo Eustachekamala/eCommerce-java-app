@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+@CrossOrigin(origins = "http://localhost:3000")
 @Tag(name = "Customer Management", description = "Operations related to customers")
 @RestController
 @RequestMapping("/api/customers")
