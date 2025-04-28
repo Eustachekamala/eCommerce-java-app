@@ -6,8 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -25,7 +24,7 @@ public class Payment {
     private Order order;
     @Convert(converter = CurrencyConverter.class)
     private Currency currency;
-    private LocalDateTime paymentDate;
+    private LocalDate paymentDate;
     @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus;
 }

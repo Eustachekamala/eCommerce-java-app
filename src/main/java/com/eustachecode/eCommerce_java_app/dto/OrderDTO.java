@@ -1,12 +1,12 @@
 package com.eustachecode.eCommerce_java_app.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public record OrderDTO(
         Integer orderId,
         Integer customerId,
-        Date orderDate,
+        LocalDate orderDate,
         double totalAmount,
         List<OrderItemDTO> orderItems
 ) {

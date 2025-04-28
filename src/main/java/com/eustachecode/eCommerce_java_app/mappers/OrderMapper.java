@@ -9,6 +9,7 @@ import com.eustachecode.eCommerce_java_app.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -30,7 +31,7 @@ public class OrderMapper {
             order.setCustomer(customer);
         }
 
-        order.setOrderDate(orderDto.orderDate() != null ? orderDto.orderDate() : new Date());
+        order.setOrderDate(orderDto.orderDate() != null ? orderDto.orderDate() : LocalDate.now());
         order.setTotalAmount(orderDto.totalAmount());
 
         // Map orderItems to OrderItem objects and set the Product using productId

@@ -5,6 +5,9 @@ import com.eustachecode.eCommerce_java_app.models.Order;
 import com.eustachecode.eCommerce_java_app.models.Payment;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 
 @Component
 public class PaymentMapper {
@@ -18,7 +21,7 @@ public class PaymentMapper {
         payment.setOrder(order);
         payment.setCurrency(paymentDTO.currency());
         payment.setAmount(paymentDTO.amount());
-        payment.setPaymentDate(paymentDTO.paymentDate());
+        payment.setPaymentDate(paymentDTO.paymentDate() != null ? paymentDTO.paymentDate() : LocalDate.now());
         payment.setPaymentStatus(paymentDTO.paymentStatus());
 
         return payment;

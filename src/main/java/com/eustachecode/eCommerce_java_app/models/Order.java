@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -27,7 +28,7 @@ public class Order {
     private List<OrderItem> orderItems = new ArrayList<>();
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<Payment> payments = new ArrayList<>();
-    private Date orderDate;
+    private LocalDate orderDate;
     @Column(nullable = false)
     private double totalAmount;
 
