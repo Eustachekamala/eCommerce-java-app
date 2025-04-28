@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -16,13 +18,14 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer paymentId;
-    @Column(nullable = false)
-    private double amount;
+    @Column(precision = 10, scale = 2)
+    private BigDecimal amount;
     @ManyToOne
     @JoinColumn(name = "oder_id", nullable = false)
     private Order order;
-    private String currency;
-    private Date paymentDate;
-    @Column(nullable = false)
-    private String paymentStatus;
+    @Convert(converter = CurrencyConverter.class)
+    private Currency currency;
+    private LocalDateTime paymentDate;
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus paymentStatus;
 }
