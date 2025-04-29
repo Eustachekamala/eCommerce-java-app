@@ -4,22 +4,32 @@ import CategoryPage from "../pages/CategoryPage";
 import CartPage from "../pages/Cart.jsx";
 import CheckoutPage from "../pages/CheckoutPage";
 import Dashboard from "../pages/admin/Dashboard";
-import Layout from "../components/Layout.jsx";
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Layout />,
-        children: [
-            { path: "/", element: <Home /> },
-            { path: "/category/:id", element: <CategoryPage /> },
-            { path: "/cart", element: <CartPage /> },
-            { path: "/checkout", element: <CheckoutPage /> },
-        ],
-    },
-    { path: "/admin", element: <Dashboard /> },
-]);
 
 export default function App() {
-    return <RouterProvider router={router} />;
+    return (
+        <RouterProvider
+            router={createBrowserRouter([
+                {
+                    path: "/",
+                    element: <Home />,
+                },
+                {
+                    path: "/category",
+                    element: <CategoryPage />,
+                },
+                {
+                    path: "/cart",
+                    element: <CartPage />,
+                },
+                {
+                    path: "/checkout",
+                    element: <CheckoutPage />,
+                },
+                {
+                    path: "/admin/dashboard",
+                    element: <Dashboard />,
+                },
+            ])}
+        />
+    )
 }

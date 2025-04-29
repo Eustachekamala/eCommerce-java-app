@@ -6,8 +6,6 @@ import App from "./router/App.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <CartProvider>
-          <App/>
-      </CartProvider>
+      <App/>
   </StrictMode>,
 )

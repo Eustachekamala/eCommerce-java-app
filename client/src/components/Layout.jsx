@@ -13,8 +13,8 @@ function Layout() {
             </main>
 
             {/* Footer (optional) */}
-            <footer className="bg-blue-700 text-white text-center py-3">
-                &copy; {new Date().getFullYear()} MyStore. All rights reserved.
+            <footer>
+
             </footer>
         </div>
     );
