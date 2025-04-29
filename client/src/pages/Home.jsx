@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getProducts } from "../api/api";
-import {useCart} from "../Context/CartContext.jsx";
+import { useCart } from "../Context/CartContext.jsx";
 
 function Home() {
     const [products, setProducts] = useState([]);
@@ -20,19 +20,32 @@ function Home() {
     }, []);
 
     return (
-        <div className="p-8">
-            <h1 className="text-3xl font-bold mb-6">Products</h1>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="p-8 bg-gray-50 min-h-screen">
+            <h1 className="text-4xl font-bold mb-10 text-center text-gray-800">Our Products</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 {products.map((product) => (
-                    <div key={product.productId} className="border p-4 rounded-lg shadow hover:shadow-lg transition">
-                        <h2 className="text-xl font-semibold mb-2">{product.productName}</h2>
-                        <p className="text-lg font-bold mb-2">{product.price} $</p>
-                        <button
-                            onClick={() => addToCart(product)}
-                            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-                        >
-                            Add to Cart
-                        </button>
+                    <div key={product.productId} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+                        {product.imageUrl && (
+                            <img
+                                src={`http://localhost:8080${product.imageUrl}`}
+                                alt={product.productName}
+                                className="w-full h-48 object-cover"
+                            />
+                        )}
+                        <div className="p-5">
+                            <h2 className="text-2xl font-semibold mb-2 text-gray-800">
+                                {product.productName}
+                            </h2>
+                            <p className="text-lg text-gray-600 mb-4 font-medium">
+                                {product.price} {product.currency || '$'}
+                            </p>
+                            <button
+                                onClick={() => addToCart(product)}
+                                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
                     </div>
                 ))}
             </div>
