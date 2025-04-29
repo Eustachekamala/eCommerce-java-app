@@ -6,9 +6,12 @@ import com.eustachecode.eCommerce_java_app.services.ProductService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -19,9 +22,13 @@ import java.util.List;
 public class ProductController {
     private final ProductService productService;
 
-    @PostMapping
-    public ResponseEntity<ProductDTO> addProduct(@RequestBody ProductDTO productDTO) {
-        return new ResponseEntity<>(productService.createProduct(productDTO), HttpStatus.CREATED);
+    @PostMapping(name = "/upload", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
+    public ResponseEntity<ProductDTO> uploadProduct(
+            @RequestPart("product") ProductDTO productDTO,
+            @RequestPart("image") MultipartFile imageFile
+    ) throws IOException {
+        ProductDTO savedProduct = productService.createProduct(productDTO, imageFile);
+        return ResponseEntity.ok(savedProduct);
     }
 
     @GetMapping

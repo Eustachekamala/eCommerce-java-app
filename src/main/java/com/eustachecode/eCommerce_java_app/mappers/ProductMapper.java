@@ -13,18 +13,20 @@ public class ProductMapper {
        Product product = new Product();
        product.setProductId(dto.productId());
        product.setProductName(dto.productName());
+       product.setImageUrl(dto.imageUrl());
        product.setStock(dto.stock());
        product.setPrice(dto.price());
        return product;
     }
     public ProductDTO toProductDTO(Product product){
         return new ProductDTO(
-                product.getProductId(),
-                product.getProductName(),
-                product.getStock(),
-                product.getPrice(),
-                product.getCategory() != null ? product.getCategory().getCategoryId() : null,
-                new ArrayList<>()
-        );
+                        product.getProductId(),
+                        product.getProductName(),
+                        product.getStock(),
+                        product.getPrice(),
+                        product.getImageUrl(),
+                        product.getCategory() != null ? product.getCategory().getCategoryId() : null,
+                        new ArrayList<>()
+                );
     }
 }
