@@ -1,11 +1,9 @@
-version: '3.8'
-
 services:
   database:
     image: 'postgres:latest'
     container_name: ecommerce-postgres
     ports:
-      - '5432:5432'
+      - '5433:5432'
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: eComDB
