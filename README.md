@@ -80,7 +80,7 @@ It consists of a **Spring Boot** backend and an **Angular** frontend structured 
 
 ## 🧱 ER Diagram
 
-![ERD](ecommerce-backend/src/main/resources/docs/eCommerceERD.png)
+![ERD](apps/ecommerce-backend/src/main/resources/docs/eCommerceERD.png)
 
 ---
 
