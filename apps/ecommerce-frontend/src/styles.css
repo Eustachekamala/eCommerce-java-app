@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+@plugin "daisyui";
+/* Define your custom theme variables */
+@theme {
+  /* Font Families */
+  --font-sans: 'Inter var', ui-sans-serif, system-ui;
+  --font-serif: 'Inter var', ui-serif, Georgia;
+
+  /* Font Sizes */
+  --text-sm: 0.8rem;
+  --text-base: 1.3rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.563rem;
+  --text-3xl: 1.953rem;
+  --text-4xl: 2.441rem;
+  --text-5xl: 3.052rem;
+
+  /* DaisyUI Theme Colors */
+  --primary: #000000;
+  --primary-content: #ffffff;
+  --secondary: #f6f6f6;
+  --neutral-content: #e8e8e8;
+}

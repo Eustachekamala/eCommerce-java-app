@@ -1,0 +1,50 @@
+<div class="navbar bg-base-100">
+  <!-- Left side: Logo -->
+  <div class="navbar-start">
+    <a class="btn btn-soft btn-primary normal-case text-xl" routerLink="/">
+      <span class="p-2 rounded-xl" routerLink="/">EC</span>
+    </a>
+  </div>
+
+  <!-- Center: Menu items -->
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li><a routerLink="/">Home</a></li>
+      <li>
+        <details class="dropdown">
+          <summary>Products</summary>
+          <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+            <li><a routerLink="/products">All</a></li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details class="dropdown">
+          <summary>Admin</summary>
+          <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+            <li><a routerLink="/admin">All</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Right side -->
+  <div class="navbar-end pe-4 flex align-items-center">
+    <div class="dropdown dropdown-end pe-8 cursor-pointer">
+      <div tabindex="0" role="button">
+        <fa-icon [icon]="['fas','user']" class="menu-icon"></fa-icon>
+      </div>
+      <ul class="dropdown-content menu menu-lg bg-base-100 rounded-box z-10 w-52 p-2 shadow-">
+        <li>
+          <button class="link">Login</button>
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown dropdown-end me-2 cursor-pointer" routerLink="/cart">
+      <div tabindex="0" role="button">
+        <fa-icon [icon]="['fas','cart-shopping']" class="menu-icon"></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>
