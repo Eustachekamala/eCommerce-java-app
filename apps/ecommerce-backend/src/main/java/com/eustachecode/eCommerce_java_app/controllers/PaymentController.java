@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:4200")
 @Tag(name = "Payment Management", description = "Operations related to products payment")
 @RequiredArgsConstructor
 @RequestMapping("/api/orders/payment")

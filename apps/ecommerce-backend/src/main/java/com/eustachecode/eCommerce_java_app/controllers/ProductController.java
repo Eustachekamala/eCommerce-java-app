@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:4200")
 @Tag(name = "Product Management", description = "Operations related to products")
 @RestController
 @RequestMapping("/api/products")

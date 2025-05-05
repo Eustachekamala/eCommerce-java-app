@@ -1,4 +1,4 @@
-package fr.codecake.ecom.shared.error.domain;
+package com.eustachecode.eCommerce_java_app.shared.error.domain;
 
 import java.util.Map;
 
